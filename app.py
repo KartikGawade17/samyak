@@ -2,23 +2,6 @@ from pathlib import Path
 import streamlit as st
 from PIL import Image
 
-import base64
-
-def load_base64(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-
-linkedin_base64 = load_base64("logo.png")
-
-from streamlit.runtime import get_instance
-
-def local_image_url(path):
-    server = get_instance().media_file_storage
-    return server.get_url_for_local_file(path)
-
-linkedin_url = local_image_url("logo.png")
-
-
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent
 css_file = current_dir / "main.css"
