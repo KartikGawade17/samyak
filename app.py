@@ -31,7 +31,7 @@ PAGE_TITLE = "Portfolio | Samyak Ajmera"
 PAGE_ICON = "📑"
 NAME = "Samyak Ajmera"
 DESCRIPTION = """
-Aspiring Article Assistant | CA Intermediate Candidate | Committed to learning, ethics, and professional growth.
+Aspiring Article Assistant | CA Intermediate Candidate | CA Foundation | Committed to learning, ethics, and professional growth.
 """
 EMAIL = "samajmera1301@gmail.com"
 
