@@ -5,8 +5,8 @@ from PIL import Image
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent
 css_file = current_dir / "main.css"
-resume_file = current_dir / "Samyak_Resume.pdf"
-profile_pic = current_dir / "samyak.png"  # or samyak.jpg
+resume_file = current_dir / "Samyak_Ajmera.pdf"
+profile_pic = current_dir / "samyak_image.jpeg"  # or samyak.jpg
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Portfolio | Samyak Ajmera"
