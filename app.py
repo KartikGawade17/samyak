@@ -173,9 +173,10 @@ st.markdown(
 # LinkedIn Box
 st.markdown(
     f"""
-    <div style="padding:12px; border:1px solid #c2d7ff; border-radius:10px;
-    background:#eef6ff; display:flex; align-items:center; gap:10px;">
-        <img src="linkedin.png" width="24">
+    <div style="padding:10px; margin-top:10px; border-radius:8px;
+    background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
+    align-items:center;">
+        <img src="data:image/png;base64,{linkedin_base64}" width="24">
         <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
             style="text-decoration:none; font-weight:600; color:#1a0dab;">
             LinkedIn Profile
