@@ -52,6 +52,11 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
+    st.markdown(
+        f"""
+        """,
+    )
+    
     # LinkedIn Box with Icon
     st.markdown(
         f"""
