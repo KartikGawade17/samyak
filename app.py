@@ -95,7 +95,7 @@ with st.sidebar:
 
 
 # --- MAIN CONTENT ---
-st.title("📘 My Portfolio")
+st.title("📘 Samyak Portfolio")
 st.write("---")
 
 # --- PROFILE SECTION ---
