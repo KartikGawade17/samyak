@@ -51,11 +51,6 @@ with st.sidebar:
         """,
         unsafe_allow_html=True,
     )
-
-    st.markdown(
-        f"""
-        """,
-    )
     
     # LinkedIn Box with Icon
     st.markdown(
@@ -77,9 +72,11 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-
-
-
+    st.markdown(
+        f"""
+        """,
+    )
+    
     st.download_button(
         label="📄 Download Resume",
         data=PDFbyte,
