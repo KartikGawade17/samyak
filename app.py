@@ -6,7 +6,8 @@ from PIL import Image
 current_dir = Path(__file__).parent
 css_file = current_dir / "main.css"
 resume_file = current_dir / "Samyak_Ajmera.pdf"
-profile_pic = current_dir / "samyak_image.jpeg"  # or samyak.jpg
+profile_pic = current_dir / "samyak_image.jpeg"
+linkedin_icon = current_dir / "linkedin.png"   # Add linkedin.png in repo
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Portfolio | Samyak Ajmera"
@@ -33,16 +34,40 @@ with open(resume_file, "rb") as pdf_file:
 
 profile_pic = Image.open(profile_pic)
 
+
 # --- SIDEBAR ---
 with st.sidebar:
     st.image(profile_pic, width=150)
     st.title(NAME)
     st.write(DESCRIPTION)
-    st.write("📫", EMAIL)
-    
-    for platform, link in SOCIAL_MEDIA.items():
-        st.markdown(f"[{platform}]({link})")
-    
+
+    # Email Box Improved
+    st.markdown(
+        f"""
+        <div style="padding:10px; margin-top:10px; border-radius:8px;
+        background:#f2f2f2; border:1px solid #ddd;">
+        <strong>Email:</strong><br>{EMAIL}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # LinkedIn Box with Icon
+    st.markdown(
+        f"""
+        <div style="padding:10px; margin-top:10px; border-radius:8px;
+        background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
+        align-items:center;">
+            <img src="linkedin.png" width="24">
+            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
+                style="text-decoration:none; font-weight:600; color:#1a0dab;">
+                LinkedIn Profile
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.download_button(
         label="📄 Download Resume",
         data=PDFbyte,
@@ -50,18 +75,16 @@ with st.sidebar:
         mime="application/octet-stream",
     )
 
+
 # --- MAIN CONTENT ---
 st.title("📘 My Portfolio")
 st.write("---")
 
 # --- PROFILE SECTION ---
 st.subheader("👤 Profile")
-st.write(
+st.markdown(
     """
-To start my professional journey as an Article Assistant in a reputed CA firm offering learning  
-and growth opportunities. I aim to gain hands-on experience in Statutory Audit, apply academic  
-knowledge to real-world business challenges, and grow into a competent Chartered Accountant  
-with strong analytical and ethical values.
+To start my professional journey as an Article Assistant in a reputed CA firm offering learning and growth opportunities. I aim to gain hands-on experience in Statutory Audit, apply my academic knowledge to real-world business challenges, and grow into a competent Chartered Accountant with strong analytical and ethical values.
 """
 )
 
@@ -82,7 +105,7 @@ st.subheader("💻 Technical & IT Skills")
 st.write(
     """
 - Completed **90 hours ITT Course** (ICAI)  
-- Good hands-on experience in **MS Excel** (important formulas, spreadsheets)  
+- Good hands-on experience in **MS Excel**  
 - Basic knowledge of **MS Word**, **PowerPoint**, **Windows**  
 - Understanding of **Accounting Standards**, **Income Tax Act**, **Audit Standards**, **GST Laws**  
 """
@@ -93,10 +116,10 @@ st.subheader("🤝 Soft Skills")
 st.write(
     """
 - Completed **90-hour ICAI Soft Skills Orientation Course**  
-- Strong communication and interpersonal abilities  
-- Good management and multitasking skills  
-- Practical, problem-solving attitude  
-- Adaptable, team player, and keen learner  
+- Strong communication & interpersonal skills  
+- Good management and multitasking abilities  
+- Practical and problem-solving mindset  
+- Adaptable, team player, quick learner  
 """
 )
 
@@ -126,11 +149,32 @@ st.write(
 # --- CONTACT INFO ---
 st.write("---")
 st.subheader("📩 Get in Touch")
-st.write("Feel free to connect or collaborate!")
-st.write("📧", EMAIL)
-for platform, link in SOCIAL_MEDIA.items():
-    st.markdown(f"[{platform}]({link})")
+
+# Email Box
+st.markdown(
+    f"""
+    <div style="padding:12px; border:1px solid #ddd; border-radius:10px;
+    background:#f7f7f7; margin-bottom:12px;">
+        <strong>Email:</strong> {EMAIL}
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+# LinkedIn Box
+st.markdown(
+    f"""
+    <div style="padding:12px; border:1px solid #c2d7ff; border-radius:10px;
+    background:#eef6ff; display:flex; align-items:center; gap:10px;">
+        <img src="linkedin.png" width="24">
+        <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
+            style="text-decoration:none; font-weight:600; color:#1a0dab;">
+            LinkedIn Profile
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.write("---")
 st.caption("© 2025 Samyak Ajmera | Built with Streamlit")
-
