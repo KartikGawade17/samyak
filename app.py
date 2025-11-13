@@ -10,6 +10,15 @@ def load_base64(image_path):
 
 linkedin_base64 = load_base64("logo.png")
 
+from streamlit.runtime import get_instance
+
+def local_image_url(path):
+    server = get_instance().media_file_storage
+    return server.get_url_for_local_file(path)
+
+linkedin_url = local_image_url("logo.png")
+
+
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent
 css_file = current_dir / "main.css"
@@ -66,7 +75,7 @@ with st.sidebar:
         <div style="padding:10px; margin-top:10px; border-radius:8px;
         background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
         align-items:center;">
-            <img src="data:image/png;base64,{linkedin_base64}" width="24">
+            <img src="{linkedin_url}" width="24">
             <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
                 style="text-decoration:none; font-weight:600; color:#1a0dab;">
                 LinkedIn Profile
@@ -176,7 +185,7 @@ st.markdown(
     <div style="padding:10px; margin-top:10px; border-radius:8px;
     background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
     align-items:center;">
-        <img src="data:image/png;base64,{linkedin_base64}" width="24">
+        <img src="{linkedin_url}" width="24">
         <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
             style="text-decoration:none; font-weight:600; color:#1a0dab;">
             LinkedIn Profile
@@ -185,6 +194,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 st.write("---")
 st.caption("© 2025 Samyak Ajmera | Built with Streamlit")
