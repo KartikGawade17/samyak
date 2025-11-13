@@ -72,18 +72,24 @@ with st.sidebar:
     # LinkedIn Box with Icon
     st.markdown(
         f"""
-        <div style="padding:10px; margin-top:10px; border-radius:8px;
-        background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
-        align-items:center;">
-            <img src="{linkedin_url}" width="24">
-            <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
-                style="text-decoration:none; font-weight:600; color:#1a0dab;">
-                LinkedIn Profile
+        <div style="
+            padding:10px;
+            margin-top:10px;
+            border-radius:8px;
+            background:#eef6ff;
+            border:1px solid #c2d7ff;
+            text-align:center;">
+            <a href="{SOCIAL_MEDIA['LinkedIn']}"
+               target="_blank"
+               style="text-decoration:none; font-weight:600; color:#1a0dab; font-size:16px;">
+               LinkedIn Profile
             </a>
         </div>
         """,
         unsafe_allow_html=True,
     )
+
+
 
 
     st.download_button(
@@ -182,18 +188,23 @@ st.markdown(
 # LinkedIn Box
 st.markdown(
     f"""
-    <div style="padding:10px; margin-top:10px; border-radius:8px;
-    background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
-    align-items:center;">
-        <img src="{linkedin_url}" width="24">
-        <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
-            style="text-decoration:none; font-weight:600; color:#1a0dab;">
-            LinkedIn Profile
+    <div style="
+        padding:12px;
+        border:1px solid #c2d7ff;
+        border-radius:10px;
+        background:#eef6ff;
+        text-align:center;
+        margin-bottom:12px;">
+        <a href="{SOCIAL_MEDIA['LinkedIn']}"
+           target="_blank"
+           style="text-decoration:none; font-weight:600; color:#1a0dab; font-size:16px;">
+           LinkedIn Profile
         </a>
     </div>
     """,
     unsafe_allow_html=True,
 )
+
 
 
 st.write("---")
