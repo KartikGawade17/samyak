@@ -8,7 +8,7 @@ def load_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-linkedin_base64 = load_base64("linkedin.png")
+linkedin_base64 = load_base64("logo.png")
 
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent
