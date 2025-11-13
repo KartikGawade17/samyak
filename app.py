@@ -2,6 +2,14 @@ from pathlib import Path
 import streamlit as st
 from PIL import Image
 
+import base64
+
+def load_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+linkedin_base64 = load_base64("linkedin.png")
+
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent
 css_file = current_dir / "main.css"
@@ -58,7 +66,7 @@ with st.sidebar:
         <div style="padding:10px; margin-top:10px; border-radius:8px;
         background:#eef6ff; border:1px solid #c2d7ff; display:flex; gap:10px;
         align-items:center;">
-            <img src="linkedin.png" width="24">
+            <img src="data:image/png;base64,{linkedin_base64}" width="24">
             <a href="{SOCIAL_MEDIA['LinkedIn']}" target="_blank"
                 style="text-decoration:none; font-weight:600; color:#1a0dab;">
                 LinkedIn Profile
@@ -67,6 +75,7 @@ with st.sidebar:
         """,
         unsafe_allow_html=True,
     )
+
 
     st.download_button(
         label="📄 Download Resume",
