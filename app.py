@@ -93,7 +93,7 @@ st.write("---")
 st.subheader("👤 Profile")
 st.markdown(
     """
-To start my professional journey as an Article Assistant in a reputed CA firm offering learning and growth opportunities. I aim to gain hands-on experience in Statutory Audit, apply my academic knowledge to real-world business challenges, and grow into a competent Chartered Accountant with strong analytical and ethical values.
+To start my professional journey as an Article Assistant in a reputed CA firm offering learning and growth opportunities. I aim to gain hands-on experience in audit assurance, direct tax and GST. apply my academic knowledge to real-world business challenges, and grow into a competent Chartered Accountant with strong analytical and ethical values.
 """
 )
 
